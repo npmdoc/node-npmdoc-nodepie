@@ -1,0 +1,921 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/andris9/nodepie"
+
+    >nodepie (v0.7.0)</a>
+</h1>
+<h4>RSS/Atom parser for Node.JS</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodepie">module nodepie</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.nodepie">
+            function <span class="apidocSignatureSpan"></span>nodepie
+            <span class="apidocSignatureSpan">(xml, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item">
+            function <span class="apidocSignatureSpan">nodepie.</span>Item
+            <span class="apidocSignatureSpan">(element, feed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie._walkForNS">
+            function <span class="apidocSignatureSpan">nodepie.</span>_walkForNS
+            <span class="apidocSignatureSpan">(node, that, depth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodepie.</span>Item.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodepie.</span>NS</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodepie.Item">module nodepie.Item</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.Item">
+            function <span class="apidocSignatureSpan">nodepie.</span>Item
+            <span class="apidocSignatureSpan">(element, feed)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodepie.Item.prototype">module nodepie.Item.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype._formatStr">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>_formatStr
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype._parseAuthor">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>_parseAuthor
+            <span class="apidocSignatureSpan">(author)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype._parseContents">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>_parseContents
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getAuthor">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getAuthor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getAuthors">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getAuthors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getCategories">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getCategories
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getCategory">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getCategory
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getComments">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getComments
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getContents">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getContents
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getDate">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getDescription">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getDescription
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getLink">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getLink
+            <span class="apidocSignatureSpan">(rel, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getPermalink">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getPermalink
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getTitle">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getTitle
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodepie.Item.prototype.getUpdateDate">
+            function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getUpdateDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodepie" id="apidoc.module.nodepie">module nodepie</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.nodepie" id="apidoc.element.nodepie.nodepie">
+        function <span class="apidocSignatureSpan"></span>nodepie
+        <span class="apidocSignatureSpan">(xml, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NodePie(xml, options) {
+
+    this.encoding = &#x27;UTF-8&#x27;;
+    this.options = options || {};
+    this.xml = xml || &#x27;&#x27;;
+
+    this.feed = undefined;
+    this.rootElement = undefined;
+    this.channelElement = undefined;
+    this.itemsElement = undefined;
+    this.feedType = undefined;
+    this.namespaces = {};
+
+    this._items = {};
+    this._item_count = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item" id="apidoc.element.nodepie.Item">
+        function <span class="apidocSignatureSpan">nodepie.</span>Item
+        <span class="apidocSignatureSpan">(element, feed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Item = function (element, feed) {
+    this.element = element;
+    this.feed = feed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie._walkForNS" id="apidoc.element.nodepie._walkForNS">
+        function <span class="apidocSignatureSpan">nodepie.</span>_walkForNS
+        <span class="apidocSignatureSpan">(node, that, depth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_walkForNS = function (node, that, depth) {
+    depth = depth || 0;
+
+    var keys = Object.keys(node);
+    var key;
+
+    if (depth &#x3e; 7) {
+        return;
+    }
+
+    for (var i = 0, len = keys.length; i &#x3c; len; i++) {
+        key = keys[i];
+        if (typeof node[key] === &#x27;string&#x27;) {
+            if (key.trim().substr(0, 6).toLowerCase() === &#x27;xmlns:&#x27;) {
+                that.namespaces[node[key]] = key.trim().substr(6);
+            }
+        } else if (node[key] &#x26;&#x26; typeof node[key] === &#x27;object&#x27;) {
+            NodePie._walkForNS(node[key], that, depth + 1);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodepie.Item" id="apidoc.module.nodepie.Item">module nodepie.Item</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.Item" id="apidoc.element.nodepie.Item.Item">
+        function <span class="apidocSignatureSpan">nodepie.</span>Item
+        <span class="apidocSignatureSpan">(element, feed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Item = function (element, feed) {
+    this.element = element;
+    this.feed = feed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodepie.Item.prototype" id="apidoc.module.nodepie.Item.prototype">module nodepie.Item.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype._formatStr" id="apidoc.element.nodepie.Item.prototype._formatStr">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>_formatStr
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatStr = function (str) {
+    return this.feed._formatStr(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype._parseAuthor" id="apidoc.element.nodepie.Item.prototype._parseAuthor">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>_parseAuthor
+        <span class="apidocSignatureSpan">(author)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_parseAuthor = function (author) {
+    // email (name)
+    var name = author.trim().match(/^[\w.\-]+@[\w.\-]+ \(([^)]+)\)$/);
+
+    if (name) {
+        author = (name[1] || &#x27;&#x27;).trim();
+    }
+
+    return this._formatStr(author);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype._parseContents" id="apidoc.element.nodepie.Item.prototype._parseContents">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>_parseContents
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_parseContents = function (str) {
+    return this.feed._parseContents(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getAuthor" id="apidoc.element.nodepie.Item.prototype.getAuthor">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getAuthor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAuthor = function () {
+    var authors = this.getAuthors();
+
+    return authors &#x26;&#x26; authors[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+Item level methods
+------------------
+
+### - getAuthor()
+
+**item.<span class="apidocCodeKeywordSpan">getAuthor</span>()** → String
+
+Fetches the (first) author of the entry
+
+Usage:
+
+var item = feed.getItem(0);
+author = item.getAuthor();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getAuthors" id="apidoc.element.nodepie.Item.prototype.getAuthors">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getAuthors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAuthors = function () {
+    var author, authors = [];
+    var dcns = this.feed.namespaces[NodePie.NS.DC];
+
+    if (this.element.author) {
+        author = this.element.author;
+    } else if (this.element.creator) {
+        author = this.element.creator;
+    } else if (dcns &#x26;&#x26; this.element[dcns + &#x27;:creator&#x27;]) {
+        author = this.element[dcns + &#x27;:creator&#x27;];
+    } else {
+        return false;
+    }
+
+    if (typeof author === &#x27;string&#x27;) {
+        return [this._parseAuthor(author)];
+    }
+
+    if (typeof author === &#x27;object&#x27;) {
+        if (Array.isArray(author)) {
+            for (var i = 0, len = author.length; i &#x3c; len; i++) {
+                if (author[i] &#x26;&#x26; author[i].name) {
+                    authors.push(author[i].name);
+                }
+            }
+            return authors || false;
+        } else if (typeof author.name === &#x27;string&#x27;) {
+            return [this._parseAuthor(author.name)];
+        }
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var item = feed.getItem(0);
+author = item.getAuthor();
+
+Returns `false` if no authors are not found from the entry
+
+### - getAuthors()
+
+**item.<span class="apidocCodeKeywordSpan">getAuthors</span>()** → Array
+
+Fetches the authors (as an array of strings) of the entry
+
+Usage:
+
+var item = feed.getItem(0);
+authors = item.getAuthors();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getCategories" id="apidoc.element.nodepie.Item.prototype.getCategories">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getCategories
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCategories = function () {
+    var category, categories = [];
+    var dcns = this.feed.namespaces[NodePie.NS.DC];
+
+    category = this.element.category || this.element[dcns + &#x27;:subject&#x27;] || this.element.department;
+
+    if (!category) {} else if (typeof category === &#x27;string&#x27;) {
+        if ((category = category.trim())) {
+            return [this._formatStr(category)];
+        }
+    } else if (Array.isArray(category)) {
+        for (var i = 0, len = category.length; i &#x3c; len; i++) {
+            if (typeof category[i] === &#x27;string&#x27;) {
+                if (category[i].trim()) {
+                    categories.push(category[i].trim());
+                }
+            } else if (typeof category[i] === &#x27;object&#x27;) {
+                if ((category[i].term || category[i].$t || &#x27;&#x27;).toString().trim()) {
+                    categories.push(this._formatStr((category[i].term || category[i].$t || &#x27;&#x27;).toString().trim()));
+                }
+            }
+        }
+        return categories.length &#x26;&#x26; categories;
+    } else if (typeof category === &#x27;object&#x27;) {
+        category = category.term || category.$t;
+        if (category &#x26;&#x26; (category = (category || &#x27;&#x27;).toString().trim())) {
+            return [this._formatStr(category)];
+        }
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var item = feed.getItem(0);
+category = item.getCategory();
+
+Returns `false` if no categories are found from the entry
+
+### - getCategories()
+
+**item.<span class="apidocCodeKeywordSpan">getCategories</span>()** → Array
+
+Fetches the categories (as an array of strings) for the entry.
+
+Usage:
+
+var item = feed.getItem(0);
+categories = item.getCategories();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getCategory" id="apidoc.element.nodepie.Item.prototype.getCategory">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getCategory
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCategory = function () {
+    var categories = this.getCategories();
+
+    return categories &#x26;&#x26; categories[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage:
+
+var item = feed.getItem(0);
+authors = item.getAuthors();
+
+### - getCategory()
+
+**item.<span class="apidocCodeKeywordSpan">getCategory</span>()** → String
+
+Fetches the (first) category of the entry.
+
+Usage:
+
+var item = feed.getItem(0);
+category = item.getCategory();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getComments" id="apidoc.element.nodepie.Item.prototype.getComments">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getComments
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getComments = function () {
+    var wfwns = this.feed.namespaces[NodePie.NS.WFW];
+    var html;
+    var feed;
+
+    if (!(html = this.element.comments)) {
+        html = this.getLink(&#x27;replies&#x27;, &#x27;text/html&#x27;);
+    }
+
+    feed = wfwns &#x26;&#x26; (feed = this.element[wfwns + &#x27;:commentRss&#x27;]);
+
+    if (!feed) {
+        feed = this.getLink(&#x27;replies&#x27;, &#x27;application/atom+xml&#x27;);
+    }
+
+    return (feed || html) ? {
+        feed: feed,
+        html: html
+    } : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var item = feed.getItem(0);
+categories = item.getCategories();
+
+Returns `false` if the categories are not found from the entry
+
+### - getComments()
+
+**item.<span class="apidocCodeKeywordSpan">getComments</span>()** → Object
+
+Fetches an object containing links to the HTML comments page and to an Atom/RSS feed of comments for the post
+
+{
+    html: &#x22;http://link_to_html_page&#x22;,
+    feed: &#x22;http://link_to_comments_feed&#x22;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getContents" id="apidoc.element.nodepie.Item.prototype.getContents">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getContents
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getContents = function () {
+    var cns = this.feed.namespaces[NodePie.NS.CONTENT];
+    var atom10ns = this.feed.namespaces[NodePie.NS.ATOM10];
+    var summary = this.element[atom10ns + &#x27;:summary&#x27;];
+
+    return this._parseContents(
+        this.element.content || (cns &#x26;&#x26; this.element[cns + &#x27;:encoded&#x27;]) ||
+        this.element.description || summary || &#x27;&#x27;
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+comments = item.getComments();
+console.log(&#x22;See all comments: &#x22; + comments.html);
+
+Returns `false` if the no information about comments is found from the entry
+
+### - getContents()
+
+**item.<span class="apidocCodeKeywordSpan">getContents</span>()** → String
+
+Fetches the contents of the entry. Prefers full text, otherwise falls back to description.
+
+Usage:
+
+var item = feed.getItem(0);
+contents = item.getContents();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getDate" id="apidoc.element.nodepie.Item.prototype.getDate">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDate = function () {
+    var dcns = this.feed.namespaces[NodePie.NS.DC];
+
+    return this.feed._processDate(
+        this.element.pubDate || this.element.published || this.element.created || this.element.issued ||
+        this.element.updated || this.element.modified || (dcns &#x26;&#x26; this.element[dcns + &#x27;:date&#x27;]) || this.element.time
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage:
+
+ var feed = new NodePie(xml_contents);
+ feed.init();
+
+### - getDate()
+
+**nodepie.<span class="apidocCodeKeywordSpan">getDate</span>()** → Date
+
+Fetches the update date of the feed and returns it as a Date object
+
+Usage:
+
+var feed = new NodePie(xml_contents);
+feed.init();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getDescription" id="apidoc.element.nodepie.Item.prototype.getDescription">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getDescription
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDescription = function () {
+    var cns = this.feed.namespaces[NodePie.NS.CONTENT];
+    var atom10ns = this.feed.namespaces[NodePie.NS.ATOM10];
+    var summary = this.element[atom10ns + &#x27;:summary&#x27;];
+
+    return this._parseContents(
+        this.element.description || summary ||
+        this.element.content || (cns &#x26;&#x26; this.element[cns + &#x27;:encoded&#x27;]) || &#x27;&#x27;
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+date = feed.getDate();
+console.log(date.getFullYear());
+
+Returns `false` if the date is not found from the feed or if it&#x27;s in invalid format
+
+### - getDescription()
+
+**nodepie.<span class="apidocCodeKeywordSpan">getDescription</span>()** → String
+
+Fetches the description of the feed
+
+Usage:
+
+var feed = new NodePie(xml_contents);
+feed.init();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getLink" id="apidoc.element.nodepie.Item.prototype.getLink">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getLink
+        <span class="apidocSignatureSpan">(rel, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLink = function (rel, type) {
+    rel = rel || &#x27;alternate&#x27;;
+    type = type || &#x27;text/html&#x27;;
+
+    var link = this.element.link || this.element.url;
+
+    if (!link) {} else if (typeof link === &#x27;string&#x27;) {
+        if (rel === &#x27;alternate&#x27; &#x26;&#x26; type === &#x27;text/html&#x27;) {
+            return link.trim();
+        }
+    } else if (typeof link === &#x27;object&#x27; &#x26;&#x26; !Array.isArray(link)) {
+        if (rel === link.rel &#x26;&#x26; (!link.type || type === link.type)) {
+            return link.href;
+        }
+    } else if (Array.isArray(link)) {
+        for (var i = 0, len = link.length; i &#x3c; len; i++) {
+            if (rel === link[i].rel &#x26;&#x26; (!link[i].type || type === link[i].type)) {
+                return link[i].href;
+            }
+        }
+    }
+
+    if (rel == &#x27;alternate&#x27; &#x26;&#x26; type == &#x27;text/html&#x27; &#x26;&#x26; link &#x26;&#x26; link.href &#x26;&#x26; !link.rel &#x26;&#x26; !link.type) {
+        return link.href;
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getPermalink" id="apidoc.element.nodepie.Item.prototype.getPermalink">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getPermalink
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPermalink = function () {
+    var permalink = this.getLink();
+    var feedLink;
+
+    if (!permalink) {
+        return permalink;
+    }
+
+    if ((feedLink = this.feed.getPermalink())) {
+        return urllib.resolve(feedLink, permalink);
+    } else {
+        return permalink;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// total items in feed: 10
+total_entries = feed.getItemQuantity(); // 10
+total_entries = feed.getItemQuantity(5); // 5
+total_entries = feed.getItemQuantity(50); // 10
+
+### - getPermalink()
+
+**nodepie.<span class="apidocCodeKeywordSpan">getPermalink</span>()** → String
+
+Fetches the link of the blog
+
+Usage:
+
+var feed = new NodePie(xml_contents);
+feed.init();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getTitle" id="apidoc.element.nodepie.Item.prototype.getTitle">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getTitle
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTitle = function () {
+    return this._parseContents(this.element.title);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    xml = require(&#x22;fs&#x22;).readFileSync(&#x22;feed.xml&#x22;);
+
+    // create a new NodePie object
+    feed = new NodePie(xml);
+    feed.init();
+
+    // output feed title
+    console.log(feed.<span class="apidocCodeKeywordSpan">getTitle</span>());
+
+    // output the titles for the first 3 entries
+    feed.getItems(0, 3).forEach(function(item){
+        console.log(item.getTitle());
+    });
+
+API
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodepie.Item.prototype.getUpdateDate" id="apidoc.element.nodepie.Item.prototype.getUpdateDate">
+        function <span class="apidocSignatureSpan">nodepie.Item.prototype.</span>getUpdateDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUpdateDate = function () {
+    return this.feed._processDate(
+        this.element.updated || this.element.modified
+    ) || this.getDate(); // fallback to creation date
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var item = feed.getItem(0);
+title = item.getTitle();
+
+Returns `false` if the title is not found from the entry
+
+### - getUpdateDate()
+
+**item.<span class="apidocCodeKeywordSpan">getUpdateDate</span>()** → Date
+
+Fetches the update date of the entry as a Date object
+
+Usage:
+
+var item = feed.getItem(0);
+date = item.getUpdateDate();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
